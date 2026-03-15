@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { WEEKS, TAG_CONFIG } from "@/data/meals";
 import MealCell from "./MealCell.jsx";
 import StatsBar from "./StatsBar.jsx";
-
 
 export default function MealPlan() {
   const [activeWeek, setActiveWeek] = useState(0);
@@ -14,6 +14,7 @@ export default function MealPlan() {
     <div style={{ fontFamily: "Georgia, serif", background: "#f0f4f8", minHeight: "100vh", padding: "24px 16px" }}>
       <div style={{ maxWidth: 780, margin: "0 auto" }}>
 
+        {/* Header */}
         <div style={{ marginBottom: 24, textAlign: "center" }}>
           <h1 style={{ fontSize: 26, fontWeight: 700, color: "#0f172a", margin: 0, letterSpacing: "-0.02em" }}>
             🍽 Familienessensplan
@@ -21,8 +22,23 @@ export default function MealPlan() {
           <p style={{ fontSize: 13, color: "#64748b", marginTop: 4 }}>
             2 Erwachsene · 1 Kind (Mittags Kita) · 4 Wochen
           </p>
+          <Link href="/shopping" style={{
+            display: "inline-block",
+            marginTop: 10,
+            padding: "7px 16px",
+            borderRadius: 8,
+            background: "#334155",
+            color: "#fff",
+            fontSize: 13,
+            fontWeight: 700,
+            textDecoration: "none",
+            fontFamily: "Georgia, serif",
+          }}>
+            🛒 Zur Einkaufsliste
+          </Link>
         </div>
 
+        {/* Legend */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20, justifyContent: "center" }}>
           {Object.entries(TAG_CONFIG).map(([k, v]) => (
             <span key={k} style={{ fontSize: "11px", padding: "3px 8px", borderRadius: 999, background: v.bg, color: v.color, fontWeight: 600 }}>
@@ -31,6 +47,7 @@ export default function MealPlan() {
           ))}
         </div>
 
+        {/* Week Tabs */}
         <div style={{ display: "flex", gap: 8, marginBottom: 20, justifyContent: "center", flexWrap: "wrap" }}>
           {WEEKS.map((w, i) => (
             <button
