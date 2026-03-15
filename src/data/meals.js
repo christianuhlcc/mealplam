@@ -19,7 +19,7 @@ export const MEAL_CATALOG = [
   { id: "stew-leftover",         label: "Eintopf (Reste)",                     slots: "mittag" },
   { id: "pancakes",              label: "Pfannkuchen",                         slots: "both" },
   { id: "potato-broccoli-mince", label: "Kartoffel-Brokkoli-Hack-Auflauf",    slots: "both", notes: "Große Portion → Reste für nächsten Tag" },
-  { id: "veggie-curry",          label: "Gemüsecurry mit Reis",                slots: "both", notes: "Reste Reis → nächsten Mittag als Gebratener Gemüse-Eier-Reis" },
+  { id: "veggie-curry",          label: "Gemüsecurry mit Reis",                slots: "mittag", notes: "Reste Reis → nächsten Mittag als Gebratener Gemüse-Eier-Reis" },
   { id: "veggie-soup",           label: "Gemüsesuppe",                         slots: "both", notes: "Reste → am nächsten Mittag aufwärmen" },
   { id: "semolina-soup",         label: "Griessnockensuppe",                   slots: "both", notes: "Reste → am nächsten Mittag aufwärmen" },
   { id: "kaesespaetzle",         label: "Käsespätzle",                         slots: "both", weekendOnly: true },
@@ -46,10 +46,11 @@ export const TAG_CONFIG = {
 };
 
 export const WEEKS = [
+  // ── WOCHE 1 ────────────────────────────────────────────────
   {
     week: 1,
     days: [
-      { day: "Montag",     mittag: { id: "salad-cheese-egg",     tags: [] },          abend: { id: "veggie-curry",          tags: ["prep"] } },
+      { day: "Montag",     mittag: { id: "salad-cheese-egg",     tags: [] },          abend: { id: "rice-veggie-tempeh",    tags: ["prep"] } },
       { day: "Dienstag",   mittag: { id: "fried-rice",           tags: ["reste"] },   abend: { id: "semolina-soup",         tags: ["prep"] } },
       { day: "Mittwoch",   mittag: { id: "semolina-soup",        tags: ["reste"] },   abend: { id: "pasta-tomato",          tags: [] } },
       { day: "Donnerstag", mittag: { id: "spontan",              tags: ["spontan"] }, abend: { id: "brotzeit",              tags: ["brot"] } },
@@ -58,6 +59,8 @@ export const WEEKS = [
       { day: "Sonntag",    mittag: { id: "spontan",              tags: ["spontan"] }, abend: { id: "rice-pudding",          tags: ["sweet"] } },
     ],
   },
+
+  // ── WOCHE 2 ────────────────────────────────────────────────
   {
     week: 2,
     days: [
@@ -70,10 +73,12 @@ export const WEEKS = [
       { day: "Sonntag",    mittag: { id: "spontan",              tags: ["spontan"] }, abend: { id: "brotzeit",              tags: ["brot"] } },
     ],
   },
+
+  // ── WOCHE 3 ────────────────────────────────────────────────
   {
     week: 3,
     days: [
-      { day: "Montag",     mittag: { id: "spontan",              tags: ["spontan"] }, abend: { id: "rice-veggie-tempeh",    tags: ["prep"] } },
+      { day: "Montag",     mittag: { id: "veggie-curry",         tags: [] },          abend: { id: "rice-veggie-tempeh",    tags: ["prep"] } },
       { day: "Dienstag",   mittag: { id: "fried-rice",           tags: ["reste"] },   abend: { id: "veggie-soup",           tags: ["prep"] } },
       { day: "Mittwoch",   mittag: { id: "veggie-soup",          tags: ["reste"] },   abend: { id: "pasta-spinach",         tags: [] } },
       { day: "Donnerstag", mittag: { id: "spontan",              tags: ["spontan"] }, abend: { id: "gnocchi-tomato",        tags: [] } },
@@ -82,12 +87,14 @@ export const WEEKS = [
       { day: "Sonntag",    mittag: { id: "spontan",              tags: ["spontan"] }, abend: { id: "waffles",               tags: ["sweet"] } },
     ],
   },
+
+  // ── WOCHE 4 ────────────────────────────────────────────────
   {
     week: 4,
     days: [
-      { day: "Montag",     mittag: { id: "salad-cheese-egg",     tags: [] },          abend: { id: "veggie-curry",          tags: ["prep"] } },
-      { day: "Dienstag",   mittag: { id: "fried-rice",           tags: ["reste"] },   abend: { id: "stew-baguette",         tags: ["prep"] } },
-      { day: "Mittwoch",   mittag: { id: "stew-leftover",        tags: ["reste"] },   abend: { id: "schupfnudeln",          tags: [] } },
+      { day: "Montag",     mittag: { id: "veggie-curry",         tags: [] },          abend: { id: "stew-baguette",         tags: ["prep"] } },
+      { day: "Dienstag",   mittag: { id: "stew-leftover",        tags: ["reste"] },   abend: { id: "rice-veggie-tempeh",    tags: ["prep"] } },
+      { day: "Mittwoch",   mittag: { id: "fried-rice",           tags: ["reste"] },   abend: { id: "schupfnudeln",          tags: [] } },
       { day: "Donnerstag", mittag: { id: "spontan",              tags: ["spontan"] }, abend: { id: "brotzeit",              tags: ["brot"] } },
       { day: "Freitag",    mittag: { id: "pizza",                tags: [] },          abend: { id: "potato-broccoli-mince", tags: ["prep"] } },
       { day: "Samstag",    mittag: { id: "potato-broccoli-mince",tags: ["reste"] },   abend: { id: "kaesespaetzle",         tags: ["we"] } },
