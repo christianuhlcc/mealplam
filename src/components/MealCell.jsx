@@ -1,4 +1,4 @@
-import TagBadge from "./TagBadge";
+import TagBadge from "./TagBadge.jsx";
 import { getMeal } from "@/data/meals";
 
 export default function MealCell({ entry, slot }) {
