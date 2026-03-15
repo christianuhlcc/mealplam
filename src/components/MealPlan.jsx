@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { WEEKS, TAG_CONFIG } from "@/data/meals";
-import MealCell from "./MealCell";
-import StatsBar from "./StatsBar";
+import MealCell from "./MealCell.jsx";
+import StatsBar from "./StatsBar.jsx";
+
 
 export default function MealPlan() {
   const [activeWeek, setActiveWeek] = useState(0);
